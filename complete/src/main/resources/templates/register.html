@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo-App|Register</title>
+    <style>
+        body {
+            background-color: #f8f8f8;
+            font-family: Arial, sans-serif;
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            box-shadow: 0px 2px 4px #cccccc;
+            margin: auto;
+            max-width: 400px;
+        }
+
+        h1 {
+            color: #555555;
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"], input[type="password"] {
+            padding: 10px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            width: 100%;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        p {
+            color: #ff0000;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div style="text-align:center; padding: 50px;">
+<h1>Register to Memories</h1>
+<form>
+  <input type="text" name = "FName" placeholder="Enter Name" /><br/>
+  <input type="text" name="username" placeholder="Enter username"/><br/>
+  <input type="password" name="password" placeholder="create password" /><br/>
+  <input type="submit" formaction="registerHandle">
+</form>
+<a href="login">Already have an account?</a>
+    <p th:text=${failed}/>
+</div>
+</body>
+</html>
